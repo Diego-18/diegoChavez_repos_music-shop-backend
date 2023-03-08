@@ -6,13 +6,14 @@ import {
 	postItem,
 	updateItem
 } from "../controllers/instruments";
+import { checkSession } from "../middleware/session";
 
 const router = Router();
 
-router.get("/", getItems);
-router.get("/:id", getItem);
-router.post("/", postItem);
-router.put("/:id", updateItem);
-router.delete("/:id", deleteItem);
+router.get("/", checkSession, getItems);
+router.get("/:id", checkSession,  getItem);
+router.post("/", checkSession, postItem);
+router.put("/:id", checkSession, updateItem);
+router.delete("/:id", checkSession, deleteItem);
 
 export { router };

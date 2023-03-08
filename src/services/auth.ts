@@ -28,7 +28,8 @@ const loginUser = async ({ email, password }: Auth) => {
 	const token = generateToken(checkIs.email);
 	const data = {
 		token,
-		user: checkIs,
+		userName: checkIs.name,
+		userEmail: checkIs.email,
 	};
 	return data;
 };
