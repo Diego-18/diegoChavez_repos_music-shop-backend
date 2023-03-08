@@ -5,14 +5,12 @@ const handleHttpError = (res: Response, error: string, errorRaw?: any) => {
 	res.send({ status: 500, msg: error });
 };
 
-const handleHttpNotFound = (res: Response, error: string, errorRaw?: any) => {
-	res.status(404);
-	res.send({ status: 404, msg: error });
+const handleHttp = (res: Response, message: string, code: number) => {
+	res.status(code);
+	res.send({ status: code, msg: message });
 };
 
-const handleHttpSuccessful = (res: Response, message: string) => {
-	res.status(200);
-	res.send({ status: 200, msg: message });
+export {
+	handleHttpError,
+	handleHttp,
 };
-
-export { handleHttpError, handleHttpNotFound, handleHttpSuccessful };
