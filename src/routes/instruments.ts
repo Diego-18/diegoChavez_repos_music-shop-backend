@@ -1,9 +1,18 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
+import {
+	deleteItem,
+	getItem,
+	getItems,
+	postItem,
+	updateItem
+} from "../controllers/instruments";
 
 const router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-	res.send({ data: "" });
-});
+router.get("/", getItems);
+router.get("/:id", getItem);
+router.post("/", postItem);
+router.put("/:id", updateItem);
+router.delete("/:id", deleteItem);
 
 export { router };
