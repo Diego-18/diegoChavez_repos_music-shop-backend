@@ -4,6 +4,7 @@ import express from "express";
 import db from "./config/database";
 import { router } from "./routes";
 
+// Base configurations of application
 const PORT = process.env.PORT || 4000;
 const app = express();
 app.use(cors());

@@ -9,6 +9,7 @@ import {
 } from "../services/instruments";
 import { handleHttp, handleHttpError } from "../utils/http.request.handle";
 
+// Get musical instruments for ID
 const getItem = async ({ params }: RequestExt, res: Response) => {
 	try {
 		const { id } = params;
@@ -20,15 +21,17 @@ const getItem = async ({ params }: RequestExt, res: Response) => {
 	}
 };
 
+// Get all musical instruments.
 const getItems = async (req: RequestExt, res: Response) => {
 	try {
 		const response = await getAllInstruments();
-		res.send({response});
+		res.send({ response });
 	} catch (error) {
 		handleHttpError(res, "ERROR_GET");
 	}
 };
 
+// Update musical instruments.
 const updateItem = async ({ params, body }: RequestExt, res: Response) => {
 	try {
 		const { id } = params;
@@ -42,6 +45,7 @@ const updateItem = async ({ params, body }: RequestExt, res: Response) => {
 	}
 };
 
+// Register musical instruments.
 const postItem = async ({ body }: RequestExt, res: Response) => {
 	try {
 		const response = await insertInstrument(body);
@@ -51,6 +55,7 @@ const postItem = async ({ body }: RequestExt, res: Response) => {
 	}
 };
 
+// Delete musical instruments.
 const deleteItem = async ({ params }: RequestExt, res: Response) => {
 	try {
 		const { id } = params;

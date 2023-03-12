@@ -3,6 +3,7 @@ import { RequestExt } from "../interfaces/request-extends";
 import { handleHttp } from "../utils/http.request.handle";
 import { verifyToken } from "../utils/jwt.handle";
 
+// Check that the token is valid as well as identify which user and password you are trying to access.
 const checkSession = (req: RequestExt, res: Response, next: NextFunction) => {
 	try {
 		const jwtByUser = req.headers.authorization || "";

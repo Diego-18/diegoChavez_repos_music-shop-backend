@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
 import { Instrument } from "../interfaces/instruments.interface";
 
+// Squema musical instruments.
 const InstrumentSchema = new Schema<Instrument>(
 	{
 		name: {

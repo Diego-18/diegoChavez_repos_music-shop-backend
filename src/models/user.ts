@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
 import { User } from "../interfaces/user.interface";
 
+// Squema users.
 const UserSchema = new Schema<User>(
 	{
 		name: {

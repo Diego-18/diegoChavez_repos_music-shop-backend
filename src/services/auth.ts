@@ -4,6 +4,7 @@ import UserModel from "../models/user";
 import { encryptPassword, verifiedPassword } from "../utils/bcrypt.handle";
 import { generateToken } from "../utils/jwt.handle";
 
+// Register new users.
 const registerNewUser = async ({ email, password, name }: User) => {
 	const checkIs = await UserModel.findOne({ email });
 	if (checkIs) return "ALREADY_USER";
@@ -16,6 +17,7 @@ const registerNewUser = async ({ email, password, name }: User) => {
 	return registerNewUser;
 };
 
+// Log In
 const loginUser = async ({ email, password }: Auth) => {
 	const checkIs = await UserModel.findOne({ email });
 	if (!checkIs) return "NOT_FOUND_USER";

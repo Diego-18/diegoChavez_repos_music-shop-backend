@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { loginUser, registerNewUser } from "../services/auth";
 import { handleHttp } from "../utils/http.request.handle";
 
+// Register Users.
 const register = async ({ body }: Request, res: Response) => {
 	const responseUser = await registerNewUser(body);
 	const data =
@@ -10,6 +11,7 @@ const register = async ({ body }: Request, res: Response) => {
 			: handleHttp(res, "SUCCESSFUL", 200);
 };
 
+// Log In.
 const login = async ({ body }: Request, res: Response) => {
 	const { email, password } = body;
 	const responseUser = await loginUser({ email, password });
