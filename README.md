@@ -36,21 +36,25 @@ This directory contains the configuration file for the database connection.
 
 This directory contains the controllers or application logic.
 
-### `src/entities`
+### `src/interfaces`
 
-In this directory are the entities that connect between the controllers and the database, in it the ORM is implemented.
+They are interfaces that will allow the application to recognize which data and data types are expected under a schema.
 
-### `src/helpers`
+### `src/middleware`
 
-In this directory are the global helpers of the application.
+In this directory there are code fragments that will be executed in the process when the path information arrives and before reaching the controller.
 
 ### `src/routes`
 
 This directory contains the REST API routes to access the controllers through the different HTTP methods.
 
-### `src/validators`
+### `src/services`
 
-This directory contains the validations of the information sent from the client.
+The services are where all the business logic and functionalities expected in the platform are applied.
+
+### `src/utils`
+
+In this directory are the code fragments that will be needed and used at the general level of the application.
 
 ## Technologies Used
 
