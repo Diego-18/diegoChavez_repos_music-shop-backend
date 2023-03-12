@@ -10,14 +10,14 @@
 
 ```bash
 # Install the dependencies
-$ yarn install
+$ npm install
 
 # Run the application in development mode localhost:3000
-$ yarn dev
+$ npm run dev
 
 # Compile for production and run the server
-$ yarn build
-$ yarn start
+$ npm run build
+$ npm start
 
 ```
 
